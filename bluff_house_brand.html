@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Bluff House — Brand Identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --emerald: #1C3D2E;
+    --emerald-mid: #2A5441;
+    --emerald-light: #3D6B52;
+    --limestone: #B5A898;
+    --limestone-light: #D6CEC4;
+    --cream: #F5F0E8;
+    --cognac: #8B4A1E;
+    --terracotta: #C4623A;
+    --charcoal: #1A1A18;
+    --warm-white: #FAF7F2;
+    --ink: #2C2A26;
+  }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 80px 60px; }
+  .label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--limestone);
+    margin-bottom: 32px;
+    display: block;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--emerald);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 110%, rgba(61,107,82,0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% -10%, rgba(44,84,65,0.4) 0%, transparent 55%);
+    pointer-events: none;
+  }
+
+  /* Topographic texture lines */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: repeating-linear-gradient(
+      -15deg,
+      transparent,
+      transparent 38px,
+      rgba(255,255,255,0.025) 38px,
+      rgba(255,255,255,0.025) 39px
+    );
+    pointer-events: none;
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .hero-coords {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.3);
+  }
+
+  .hero-center {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 0 40px;
+  }
+
+  .main-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(72px, 10vw, 120px);
+    color: #fff;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+  }
+
+  .main-wordmark em {
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.55em;
+    display: block;
+    letter-spacing: 0.08em;
+    margin-top: 16px;
+    font-family: 'Jost', sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .hero-rule {
+    width: 60px;
+    height: 1px;
+    background: rgba(255,255,255,0.3);
+    margin: 40px 0;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    color: rgba(255,255,255,0.6);
+    max-width: 420px;
+    line-height: 1.5;
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+  }
+
+  .canyon-illustration {
+    width: 320px;
+    height: 120px;
+    opacity: 0.18;
+  }
+
+  .hero-est {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+  }
+
+  /* ── LOGO SECTION ── */
+  .logo-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .logo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .logo-cell {
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .logo-cell.bg-dark { background: var(--emerald); }
+  .logo-cell.bg-cream { background: var(--cream); border: 1px solid var(--limestone-light); }
+  .logo-cell.bg-limestone { background: var(--limestone-light); }
+
+  .logo-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .logo-mark-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 36px;
+    letter-spacing: 0.01em;
+    line-height: 1;
+  }
+
+  .logo-mark-sub {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 9.5px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .logo-mark-line {
+    width: 40px;
+    height: 1px;
+    margin: 2px 0;
+  }
+
+  .logo-cell.bg-dark .logo-mark-name { color: #fff; }
+  .logo-cell.bg-dark .logo-mark-sub { color: rgba(255,255,255,0.45); }
+  .logo-cell.bg-dark .logo-mark-line { background: rgba(255,255,255,0.25); }
+  .logo-cell.bg-cream .logo-mark-name { color: var(--emerald); }
+  .logo-cell.bg-cream .logo-mark-sub { color: var(--limestone); }
+  .logo-cell.bg-cream .logo-mark-line { background: var(--limestone-light); }
+  .logo-cell.bg-limestone .logo-mark-name { color: var(--emerald); }
+  .logo-cell.bg-limestone .logo-mark-sub { color: rgba(44,42,38,0.5); }
+  .logo-cell.bg-limestone .logo-mark-line { background: rgba(44,42,38,0.2); }
+
+  .cell-label {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+  .logo-cell.bg-dark .cell-label { color: rgba(255,255,255,0.25); }
+  .logo-cell.bg-cream .cell-label { color: var(--limestone); }
+  .logo-cell.bg-limestone .cell-label { color: rgba(44,42,38,0.35); }
+
+  /* ── PALETTE SECTION ── */
+  .palette-section {
+    background: var(--charcoal);
+    padding: 100px 60px;
+  }
+
+  .palette-section .label { color: rgba(255,255,255,0.3); }
+
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    height: 280px;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .swatch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px 16px;
+    transition: flex 0.4s ease;
+  }
+
+  .swatch:hover { flex: 2; }
+
+  .swatch-name {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+
+  .swatch-hex {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+  }
+
+  .swatch-role {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin-top: 6px;
+  }
+
+  .sw-emerald { background: var(--emerald); }
+  .sw-emerald .swatch-name, .sw-emerald .swatch-hex, .sw-emerald .swatch-role { color: #fff; }
+
+  .sw-limestone { background: var(--limestone-light); }
+  .sw-limestone .swatch-name, .sw-limestone .swatch-hex, .sw-limestone .swatch-role { color: var(--emerald); }
+
+  .sw-cream { background: var(--cream); }
+  .sw-cream .swatch-name, .sw-cream .swatch-hex, .sw-cream .swatch-role { color: var(--emerald); }
+
+  .sw-cognac { background: var(--cognac); }
+  .sw-cognac .swatch-name, .sw-cognac .swatch-hex, .sw-cognac .swatch-role { color: #fff; }
+
+  .sw-terracotta { background: var(--terracotta); }
+  .sw-terracotta .swatch-name, .sw-terracotta .swatch-hex, .sw-terracotta .swatch-role { color: #fff; }
+
+  .sw-charcoal { background: #1A1A18; border: 1px solid #333; }
+  .sw-charcoal .swatch-name, .sw-charcoal .swatch-hex, .sw-charcoal .swatch-role { color: rgba(255,255,255,0.7); }
+
+  /* ── TYPOGRAPHY ── */
+  .type-section {
+    background: var(--warm-white);
+    padding: 100px 60px;
+  }
+
+  .type-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 64px;
+  }
+
+  .type-specimen h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--emerald);
+    margin-bottom: 12px;
+  }
+
+  .type-specimen h2 em {
+    font-style: italic;
+    color: var(--limestone);
+  }
+
+  .type-specimen-meta {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--limestone);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--limestone-light);
+  }
+
+  .type-specimen p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+
+  .type-specimen-2 .big-word {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 72px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--limestone-light);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  /* ── VOICE SECTION ── */
+  .voice-section {
+    background: var(--emerald);
+    padding: 100px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .voice-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -15deg,
+      transparent,
+      transparent 38px,
+      rgba(255,255,255,0.02) 38px,
+      rgba(255,255,255,0.02) 39px
+    );
+  }
+
+  .voice-section .label { color: rgba(255,255,255,0.3); position: relative; z-index: 1; }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .voice-col h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .voice-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .voice-list li {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.65);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .voice-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .voice-list.is-not li::before { color: rgba(196, 98, 58, 0.6); content: '×'; }
+
+  /* ── TOUCHPOINTS ── */
+  .touch-section {
+    background: var(--cream);
+    padding: 100px 60px;
+  }
+
+  .touch-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .touch-card {
+    background: var(--warm-white);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background 0.2s;
+  }
+
+  .touch-card:hover { background: #fff; }
+
+  .touch-icon {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .touch-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: var(--emerald);
+    line-height: 1.2;
+  }
+
+  .touch-card p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--ink);
+    opacity: 0.65;
+  }
+
+  .touch-detail {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--limestone);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* ── GUESTBOOK SECTION ── */
+  .guest-section {
+    background: #fff;
+    padding: 100px 60px;
+  }
+
+  .guest-inner {
+    max-width: 640px;
+  }
+
+  .guest-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 52px;
+    color: var(--emerald);
+    line-height: 1.1;
+    margin: 32px 0 24px;
+  }
+
+  .guest-section h2 em {
+    font-style: italic;
+    color: var(--limestone);
+  }
+
+  .guest-section > p {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--ink);
+    opacity: 0.7;
+    margin-bottom: 48px;
+  }
+
+  .guest-prompts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--limestone-light);
+  }
+
+  .prompt-row {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--limestone-light);
+    align-items: start;
+  }
+
+  .prompt-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--limestone);
+    font-style: italic;
+    padding-top: 2px;
+  }
+
+  .prompt-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--emerald);
+    line-height: 1.4;
+  }
+
+  .prompt-note {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--limestone);
+    margin-top: 6px;
+  }
+
+  /* ── FOOTER STRIP ── */
+  .footer-strip {
+    background: var(--emerald);
+    padding: 40px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-strip .wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 0.01em;
+  }
+
+  .footer-strip .tagline {
+    font-family: 'Jost', sans-serif;
+    font-weight: 200;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-strip .location {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* fade in */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-center > * {
+    animation: fadeUp 0.9s ease forwards;
+    opacity: 0;
+  }
+  .hero-center > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-center > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-center > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-center > *:nth-child(4) { animation-delay: 0.55s; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-top">
+    <span class="hero-eyebrow">Brand Identity System</span>
+    <span class="hero-coords">36.3852° N, 93.1863° W</span>
+  </div>
+
+  <div class="hero-center">
+    <div class="main-wordmark">
+      The Bluff<br>House
+      <em>Jasper, Arkansas &nbsp;·&nbsp; Buffalo River Country</em>
+    </div>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">Where the forest meets the canyon, and the canyon asks nothing of you.</p>
+  </div>
+
+  <div class="hero-bottom">
+    <!-- Canyon silhouette SVG -->
+    <svg class="canyon-illustration" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 120 L0 60 L20 55 L35 70 L50 50 L65 40 L80 55 L90 35 L105 20 L115 38 L125 25 L140 45 L155 30 L170 15 L185 35 L195 20 L210 38 L225 28 L240 50 L255 40 L265 55 L280 45 L295 60 L310 50 L320 58 L320 120 Z" fill="white" opacity="0.6"/>
+      <path d="M0 120 L0 80 L15 75 L30 85 L50 70 L70 75 L85 65 L100 72 L115 60 L130 68 L145 58 L160 65 L175 55 L190 62 L205 52 L220 60 L235 55 L250 65 L265 60 L280 70 L295 65 L310 75 L320 72 L320 120 Z" fill="white" opacity="0.4"/>
+    </svg>
+    <span class="hero-est">Est. 2026</span>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section class="logo-section">
+  <span class="label">01 — Wordmark &amp; Logo System</span>
+  <div class="logo-grid">
+    <div class="logo-cell bg-dark">
+      <div class="logo-mark">
+        <span class="logo-mark-name">The Bluff House</span>
+        <div class="logo-mark-line"></div>
+        <span class="logo-mark-sub">Jasper · Arkansas</span>
+      </div>
+      <span class="cell-label">Primary — reversed</span>
+    </div>
+    <div class="logo-cell bg-cream">
+      <div class="logo-mark">
+        <span class="logo-mark-name">The Bluff House</span>
+        <div class="logo-mark-line"></div>
+        <span class="logo-mark-sub">Jasper · Arkansas</span>
+      </div>
+      <span class="cell-label">Primary — on cream</span>
+    </div>
+    <div class="logo-cell bg-limestone">
+      <div class="logo-mark">
+        <span class="logo-mark-name">The Bluff House</span>
+        <div class="logo-mark-line"></div>
+        <span class="logo-mark-sub">Jasper · Arkansas</span>
+      </div>
+      <span class="cell-label">Primary — on limestone</span>
+    </div>
+  </div>
+</section>
+
+<!-- PALETTE -->
+<section class="palette-section">
+  <span class="label">02 — Color Palette</span>
+  <div class="palette-grid">
+    <div class="swatch sw-emerald">
+      <span class="swatch-name">Ozark Emerald</span>
+      <span class="swatch-hex">#1C3D2E</span>
+      <span class="swatch-role">Primary / Forest</span>
+    </div>
+    <div class="swatch sw-limestone">
+      <span class="swatch-name">Limestone</span>
+      <span class="swatch-hex">#D6CEC4</span>
+      <span class="swatch-role">Neutral / Bluff</span>
+    </div>
+    <div class="swatch sw-cream">
+      <span class="swatch-name">Swiss Cream</span>
+      <span class="swatch-hex">#F5F0E8</span>
+      <span class="swatch-role">Background / Light</span>
+    </div>
+    <div class="swatch sw-cognac">
+      <span class="swatch-name">Cognac</span>
+      <span class="swatch-hex">#8B4A1E</span>
+      <span class="swatch-role">Warmth / Leather</span>
+    </div>
+    <div class="swatch sw-terracotta">
+      <span class="swatch-name">Terracotta</span>
+      <span class="swatch-hex">#C4623A</span>
+      <span class="swatch-role">Accent / Earth</span>
+    </div>
+    <div class="swatch sw-charcoal">
+      <span class="swatch-name">Charcoal</span>
+      <span class="swatch-hex">#1A1A18</span>
+      <span class="swatch-role">Contrast / Black</span>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section class="type-section">
+  <span class="label">03 — Typography</span>
+  <div class="type-grid">
+    <div class="type-specimen">
+      <div class="type-specimen-meta">Display — Cormorant Garamond Light / Italic</div>
+      <h2>The canyon<br><em>never rushes.</em></h2>
+      <p>Used for headlines, the wordmark, pull quotes, and the welcome letter. Carries the literary, place-rooted quality of the brand. Pairs elegance with weight.</p>
+    </div>
+    <div class="type-specimen type-specimen-2">
+      <div class="type-specimen-meta">Body — Jost ExtraLight / Light</div>
+      <div class="big-word">JASPER</div>
+      <p style="font-size:15px; line-height:1.85; opacity:0.7;">Used for labels, body copy, and all-caps utility text. The extreme lightness reads as unhurried and refined — the opposite of overdesigned. Generous letter-spacing in uppercase settings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND VOICE -->
+<section class="voice-section">
+  <span class="label">04 — Brand Voice</span>
+  <div class="voice-grid">
+    <div class="voice-col">
+      <h3>The Bluff House sounds like…</h3>
+      <ul class="voice-list">
+        <li>Unhurried and quietly confident — never tries too hard</li>
+        <li>Literary but not pretentious — reads like a good letter</li>
+        <li>Specific to this place — names the canyon, the river, the town</li>
+        <li>Invites participation — "mark your spot," "put a record on"</li>
+        <li>Warm without being saccharine — earned warmth, not performed</li>
+        <li>Honest about what it is — a beautiful house in wild country</li>
+      </ul>
+    </div>
+    <div class="voice-col">
+      <h3>It never sounds like…</h3>
+      <ul class="voice-list is-not">
+        <li>"Luxury" as a noun — that word doesn't belong here</li>
+        <li>Generic hospitality speak — "we hope you enjoy your stay"</li>
+        <li>Adventure tourism hype — no exclamation points</li>
+        <li>Instagram caption energy — no em dash after "views"</li>
+        <li>Corporate rental-speak — no "amenities" or "property"</li>
+        <li>Rustic/cabin clichés — no antlers, no "cozy retreat"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND TOUCHPOINTS -->
+<section class="touch-section">
+  <span class="label">05 — Guest Experience Touchpoints</span>
+  <div class="touch-grid">
+    <div class="touch-card">
+      <div class="touch-icon">◎</div>
+      <h3>The Welcome Console</h3>
+      <p>Record player, welcome letter, and a curated stack of Arkansas vinyl. The first thing guests interact with. Sets the tone for the entire stay.</p>
+      <p class="touch-detail">Johnny Cash · Glen Campbell · Charlie Rich · Al Green</p>
+    </div>
+    <div class="touch-card">
+      <div class="touch-icon">⊕</div>
+      <h3>The Explorer's Map</h3>
+      <p>Large illustrated topographic map of Buffalo River country in the mudroom. Pins for guests to mark their discoveries. The map becomes a living document of every visit.</p>
+      <p class="touch-detail">Artisan illustrated map — custom commission recommended</p>
+    </div>
+    <div class="touch-card">
+      <div class="touch-icon">◻</div>
+      <h3>The Guest Book</h3>
+      <p>Not a standard sign-in. A prompted journal that builds a living archive of exploration. Each entry is written for the family who arrives next — not for the owner.</p>
+      <p class="touch-detail">See prompts below — designed to inspire, not require</p>
+    </div>
+    <div class="touch-card">
+      <div class="touch-icon">◈</div>
+      <h3>Signature Scent</h3>
+      <p>Cedar, wild sage, and limestone. Jasper soaps in the bathrooms. Consider a custom candle from an Arkansas maker — guests will smell it for years and remember where they were.</p>
+      <p class="touch-detail">Jasper Soap Company · or commission a small-batch candle</p>
+    </div>
+    <div class="touch-card">
+      <div class="touch-icon">◇</div>
+      <h3>Adventure Gear Corner</h3>
+      <p>Osprey toddler carrier, kids' packs, binoculars, nature ID guides, field journal. Presented intentionally, not stuffed in a closet. Makes families feel genuinely equipped.</p>
+      <p class="touch-detail">Position near back door with a simple hand-lettered label</p>
+    </div>
+    <div class="touch-card">
+      <div class="touch-icon">◉</div>
+      <h3>The Sauna Ritual</h3>
+      <p>After a day on the river or the trail. The most Scandinavian element of the property — and the most memorable for guests who've never used one. Include a simple card on sauna etiquette and ritual.</p>
+      <p class="touch-detail">Best after Buffalo River · best before sunset on the deck</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUESTBOOK DESIGN -->
+<section class="guest-section">
+  <span class="label">06 — The Guest Book</span>
+  <div class="guest-inner">
+    <h2>A record<br>of <em>finding things.</em></h2>
+    <p>The guest book at The Bluff House is not a sign-in sheet. It's a living archive of exploration — written by guests for the people who come after them. The prompts below are invitations, not requirements. Keep the book hardcover, unlined, with the prompts printed on the inside cover.</p>
+
+    <div class="guest-prompts">
+      <div class="prompt-row">
+        <span class="prompt-num">i.</span>
+        <div>
+          <p class="prompt-text">"Where did you go that we should know about?"</p>
+          <p class="prompt-note">A trail, a swimming hole, a view, a roadside stand, a diner. Mark it on the map too.</p>
+        </div>
+      </div>
+      <div class="prompt-row">
+        <span class="prompt-num">ii.</span>
+        <div>
+          <p class="prompt-text">"What did the canyon look like at the hour you saw it best?"</p>
+          <p class="prompt-note">Dawn, dusk, after rain, in fog — the light changes everything.</p>
+        </div>
+      </div>
+      <div class="prompt-row">
+        <span class="prompt-num">iii.</span>
+        <div>
+          <p class="prompt-text">"What did your kids discover that surprised you?"</p>
+          <p class="prompt-note">Optional. For the families — kids often find what adults walk past.</p>
+        </div>
+      </div>
+      <div class="prompt-row">
+        <span class="prompt-num">iv.</span>
+        <div>
+          <p class="prompt-text">"What record did you play, and when?"</p>
+          <p class="prompt-note">Some of the best notes will be about music + moment.</p>
+        </div>
+      </div>
+      <div class="prompt-row">
+        <span class="prompt-num">v.</span>
+        <div>
+          <p class="prompt-text">"What will you come back for?"</p>
+          <p class="prompt-note">The final prompt. Ends on return — not goodbye.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer-strip">
+  <span class="wordmark">The Bluff House</span>
+  <span class="tagline">Buffalo River Country · Jasper, Arkansas</span>
+  <span class="location">36.3852° N, 93.1863° W</span>
+</div>
+
+</body>
+</html>
